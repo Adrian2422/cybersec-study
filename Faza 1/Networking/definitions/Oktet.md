@@ -1,0 +1,1 @@
+Oktet to część [[Adres IP]] która jest dziesiętną reprezentacją bajtów. Zakres oktetu to 0 do 255 czyli $2^8$ 
