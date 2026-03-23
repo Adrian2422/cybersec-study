@@ -14,11 +14,11 @@
 
 ### Miesiąc 1 – Sieci + Linux
 
-| Czas | Aktywność |
-|---|---|
-| 1.5h/dzień | TryHackMe – ścieżka **"Pre-Security"** (darmowa) |
-| 1.5h/dzień | **Professor Messer CompTIA Network+** (YouTube, darmowy) |
-| 1h/dzień | Linux CLI – ćwiczenia na **OverTheWire: Bandit** |
+| Czas       | Aktywność                                                                                                                                            |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.5h/dzień | TryHackMe – ścieżka **"Pre-Security"** (darmowa)                                                                                                     |
+| 1.5h/dzień | [**Professor Messer CompTIA Network+**](https://youtube.com/playlist?list=PLG49S3nxzAnlCJiCrOYuRYb6cne864a7G&si=HkCZnaWNh-aHy3P6) (YouTube, darmowy) |
+| 1h/dzień   | Linux CLI – ćwiczenia na [**OverTheWire: Bandit**](https://overthewire.org/wargames/bandit/bandit0.html)                                             |
 
 **📌 Cel miesięczny:** Ukończona ścieżka Pre-Security na TryHackMe, poziom 10+ na Bandit.
 
