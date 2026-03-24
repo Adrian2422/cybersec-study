@@ -1,6 +1,6 @@
 Link: [Level 2](https://overthewire.org/wargames/bandit/bandit2.html)
 
-Zadaniem jest znalezienie hasła zlokalizowanego w pliku `-` i użycie tego hasła do zalogowania się jako `bandit2`.
+Zadaniem jest znalezienie hasła zlokalizowanego w pliku `-`
 
 1. Listuję katalog home `ls -la`.
 2. Zwykłe użycie `cat -` nie działa (powershell używa `-` jako synonimu dla `stdin`), więc szukam wyjaśnienia i alternatywy.

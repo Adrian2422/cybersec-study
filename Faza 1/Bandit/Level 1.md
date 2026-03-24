@@ -1,6 +1,6 @@
 Link: [Level 1](https://overthewire.org/wargames/bandit/bandit1.html)
 
-Zadaniem jest znalezienie hasła zlokalizowanego w pliku `readme` i użycie tego hasła do zalogowania się jako `bandit1`.
+Zadaniem jest znalezienie hasła zlokalizowanego w pliku `readme`
 
 Kontynuuję z level0, i przeglądam katalogi za pomocą `ls`. 
 Znaleziony plik przeglądam za pomocą `cat`.
