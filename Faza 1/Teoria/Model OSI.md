@@ -23,10 +23,18 @@ Port 80 to HTTP, 443 to HTTPS, 22 to SSH, 25 to SMTP. Dzięki portom jeden kompu
 [[SYN Flood]] to atak, gdzie atakujący wysyła tysiące pakietów SYN, nie kończąc handshake'u Serwer rezerwuje zasoby dla każdego nieukończonego połączenia i w końcu się dusi.
 Port scanning również ma miejsce tutaj, bo nmap może mapować też porty i ustalać jakie usługi są uruchomione na celu.
 
-Warstwa sesji zarządza nawiązywaniem i kończeniem połączeń. 
+Warstwa sesji zarządza nawiązywaniem i kończeniem połączeń między dwoma aplikacjami. Protokoły takie jak [[NetBIOS]] czy [[RPC]] działają tutaj. [[WebSocket]] też operuje na poziomie sesji.
+[[Session hijacking]] to atak polegający na kradzieży identyfikatora sesji (np. ciasteczka sesyjnego przeglądarki) i podszywanie się pod zalogowanego użytkownika. Jeśli serwer identyfikuje użytkownika tylko po tokenie sesji i ten token wycieknie, a takujący może przejąć konto bez znajomości hasła.
 
-Warstwa prezentacji zajmuje się formatowaniem i szyfrowaniem danych. [[TLS]], [[SSL]], [[HTTPS]] mieszkają właśnie tutaj.
+Warstwa prezentacji zajmuje się formatowaniem, kompresją i szyfrowaniem danych. [[TLS]], [[SSL]], [[HTTPS]] mieszkają właśnie tutaj.
+TLS (ang. _Transport Layer Security_, bezpieczeństwo warstwy transportowej) — protokół, który stoi za HTTPS i tą małą kłódką w przeglądarce — formalnie należy do tej warstwy. TLS szyfruje dane zanim trafią do warstwy transportowej, używając algorytmów takich jak AES (ang. _Advanced Encryption Standard_, zaawansowany standard szyfrowania). Negocjuje też certyfikaty, weryfikując, czy serwer jest tym, za kogo się podaje.
+Formaty jak JPEG, PNG, MP4, czy standardy kodowania tekstu jak UTF-8 i ASCII też mieszkają na tej warstwie — to tu dane są tłumaczone na format zrozumiały dla aplikacji.
+BEAST, POODLE, Heartbleed — to głośne podatności (słabości) w implementacjach TLS i jego poprzednika SSL. Downgrade attack polega na zmuszeniu połączenia do użycia starszej, słabszej wersji protokołu. Dlatego konfiguracja serwera, która wyłącza stare wersje TLS (1.0, 1.1) i słabe szyfry, jest tak ważna.
 
-Warstwa aplikacji 
+Warstwa aplikacji to najwyższa warstwa, gdzie użytkownik styka się z siecią. Protokoły warstw aplikacji definiują język, jakim rozmawiają ze sobą aplikacje.
+[[HTTP]] (ang. _HyperText Transfer Protocol_) to język przeglądarki i serwera WWW — żądania GET, POST, PUT, DELETE, nagłówki, kody odpowiedzi (200 OK, 404 Not Found, 500 Internal Server Error). HTTPS to HTTP + TLS z warstwy 6.
+DNS (ang. _Domain Name System_) tłumaczy nazwy domenowe na adresy IP — kiedy piszesz `google.com`, zapytanie DNS leci do serwera nazw i wraca z adresem IP. Bez DNS Internet byłby siecią liczb, które nikt by nie pamiętał.
+SMTP (ang. _Simple Mail Transfer Protocol_) wysyła maile, IMAP i POP3 je odbierają. FTP (ang. _File Transfer Protocol_) transferuje pliki. SSH (ang. _Secure Shell_, bezpieczna powłoka) daje szyfrowany dostęp do zdalnej linii komend.
+[[SQL Injection]] i [[XSS]] (ang. _Cross-Site Scripting_, skryptowanie między witrynami) atakują aplikacje webowe przez HTTP. DNS poisoning (zatruwanie cache DNS) podmienia odpowiedzi DNS, kierując użytkowników na fałszywe strony. Phishing (wyłudzanie danych) operuje przez SMTP.
 
-Znajomość warstw jest kluczowa do zrozumienia i przeciwdziałania atakom. [[XSS]] i [[SQL Injection]] atakują warstwę 7. Man-in-the-Middle może działać na warstwie 2 (ARP spoofing) lub 3. DDoS atakuje warstwę 4 zalewając serwer milionami pakietów TCP. Wiedząc, na której warstwie działa atak, wiesz też, gdzie szukać obrony.
+Znajomość warstw jest kluczowa do zrozumienia i przeciwdziałania atakom. Wiedząc, na której warstwie działa atak, wiesz też, gdzie szukać obrony.

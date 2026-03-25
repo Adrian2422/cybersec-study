@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Faza 1/Bandit/Level 6.md",
+                "file": "Faza 1/Teoria/Model OSI.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Level 6"
+              "title": "Model OSI"
             }
           }
         ]
@@ -196,8 +196,8 @@
   },
   "active": "a2be97b9ef4f9a93",
   "lastOpenFiles": [
-    "Faza 1/Bandit/Level 5.md",
     "Faza 1/Bandit/Level 6.md",
+    "Faza 1/Bandit/Level 5.md",
     "Faza 1/Bandit/Level 0.md",
     "Faza 1/Bandit/Level 1.md",
     "Faza 1/Bandit/Level 2.md",
